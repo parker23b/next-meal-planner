@@ -1,4 +1,7 @@
 meal-planner/
+├── models/
+│   ├── User.js
+│   ├── MealPlan.js
 ├── pages/
 │   ├── api/
 │   │   ├── auth/
@@ -10,8 +13,12 @@ meal-planner/
 │   ├── index.js
 │   ├── login.js
 │   ├── signup.js
+├── lib/
+│   ├── db.js
 ├── components/
+│   ├── Navbar.js
+│   ├── MealPlanForm.js
 ├── styles/
+│   ├── globals.css
 ├── .env.local
 ├── package.json
-
