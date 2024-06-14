@@ -1,0 +1,17 @@
+meal-planner/
+├── pages/
+│   ├── api/
+│   │   ├── auth/
+│   │   │   ├── login.js
+│   │   │   ├── register.js
+│   │   ├── meal-plans/
+│   │   │   ├── create.js
+│   │   │   ├── index.js
+│   ├── index.js
+│   ├── login.js
+│   ├── signup.js
+├── components/
+├── styles/
+├── .env.local
+├── package.json
+
