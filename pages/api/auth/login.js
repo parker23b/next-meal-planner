@@ -1,8 +1,7 @@
-// pages/api/auth/login.js
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../../../../models/User";
-import connectDB from "../../../../lib/db";
+import User from "../../../models/User";
+import connectDB from "../../../lib/db";
 
 export const login = async (req, res) => {
   await connectDB();
