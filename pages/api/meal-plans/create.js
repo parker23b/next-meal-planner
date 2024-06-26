@@ -1,4 +1,3 @@
-// pages/api/meal-plans/create.js
 import jwt from "jsonwebtoken";
 import MealPlan from "../../../../models/MealPlan";
 import connectDB from "../../../../lib/db";

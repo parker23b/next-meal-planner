@@ -1,4 +1,3 @@
-// models/MealPlan.js
 import mongoose from "mongoose";
 
 const MealPlanSchema = new mongoose.Schema({

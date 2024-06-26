@@ -1,10 +1,9 @@
-// pages/api/meal-plans/index.js
 import jwt from "jsonwebtoken";
-import MealPlan from "../../../../models/MealPlan";
-import connectDB from "../../../../lib/db";
+import MealPlan from "../../../models/MealPlan";
+import connectMongo from "../../../lib/mongo";
 
 export const index = async (req, res) => {
-  await connectDB();
+  await connectMongo();
 
   if (req.method === "GET") {
     const { authorization } = req.headers;

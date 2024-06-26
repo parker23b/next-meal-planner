@@ -1,5 +1,4 @@
-// pages/meal-plans.js
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const MealPlans = () => {
@@ -7,15 +6,15 @@ const MealPlans = () => {
   const [title, setTitle] = useState("");
   const [meals, setMeals] = useState([{ name: "", calories: 0 }]);
 
-  useEffect(() => {
-    const fetchMealPlans = async () => {
-      const response = await axios.get("/api/meal-plans", {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      });
-      setMealPlans(response.data);
-    };
-    fetchMealPlans();
-  }, []);
+  // useEffect(() => {
+  //   const fetchMealPlans = async () => {
+  //     const response = await axios.get("/api/meal-plans", {
+  //       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  //     });
+  //     setMealPlans(response.data);
+  //   };
+  //   fetchMealPlans();
+  // }, []);
 
   const handleCreateMealPlan = async (e) => {
     e.preventDefault();

@@ -1,4 +1,3 @@
-// // pages/api/auth/register.js
 // import bcrypt from "bcryptjs";
 // import User from "../../../models/User";
 // import connectDB from "../../../lib/db";
@@ -41,6 +40,7 @@ export default async function register(req, res) {
       const user = await createUser(req.body?.email, req.body?.password);
       const tokens = await generateAuthTokens(user);
       await user.save();
+
       res.status(200).json({ user, tokens });
     } else {
       res.status(400).json({ error: "invalid params" });
@@ -48,8 +48,4 @@ export default async function register(req, res) {
   } catch (e) {
     res.status(500).json({ error: e });
   }
-  //create user token JWT
-  //save user
-  //return the token
-  //res.status(200).json({ email: req.body.email, password: req.body.password });
 }

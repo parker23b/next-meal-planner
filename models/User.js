@@ -25,13 +25,6 @@ const userSchema = Schema(
     username: {
       type: String,
     },
-    sports: [
-      {
-        type: SchemaTypes.ObjectId,
-        required: true,
-        ref: "Sport",
-      },
-    ],
   },
   {
     timestamps: true,

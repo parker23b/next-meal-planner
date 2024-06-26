@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import User from "../../../models/User";
 import connectDB from "../../../lib/db";
 
-export const login = async (req, res) => {
+export default async function login(req, res) {
   await connectDB();
 
   if (req.method === "POST") {
@@ -23,4 +23,4 @@ export const login = async (req, res) => {
   } else {
     res.status(405).json({ message: "Method not allowed" });
   }
-};
+}
