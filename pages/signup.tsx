@@ -1,12 +1,12 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import apiClient from "@/lib/apiClient";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignup = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const res = await apiClient.post("api/auth/register", {
@@ -30,7 +30,9 @@ const Signup = () => {
             autoCapitalize="none"
             className={`form-control w-full input input-bordered`}
             placeholder="name@domain.com"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: { target: { value: any } }) =>
+              setEmail(e.target.value)
+            }
             value={email}
             required
           />
@@ -41,6 +43,7 @@ const Signup = () => {
             className={`form-control w-full input input-bordered $`}
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            placeholder="password"
             required
           />
           <button type="submit" className="btn btn-primary btn-block">

@@ -29,8 +29,9 @@ export default async function register(req, res) {
       if (!req.body?.email) {
         return res.status(400).json({ error: "Please enter a valid email." });
       }
+      console.log("1");
       await connectMongo();
-
+      console.log("2");
       if (await User.isEmailTaken(req.body.email)) {
         return res.status(400).json({
           error:
@@ -38,6 +39,7 @@ export default async function register(req, res) {
         });
       }
       const user = await createUser(req.body?.email, req.body?.password);
+      console.log("3");
       const tokens = await generateAuthTokens(user);
       await user.save();
 
